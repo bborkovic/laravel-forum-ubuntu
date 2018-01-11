@@ -12,10 +12,12 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+        DB::table('categories')->truncate();
+        // factory('App\Category', 10)->create();
+
       // First level
         Category::create([ 'parent_id' => -1
             , 'name' => 'Drustvo', 'level' => 'root' ]);
-        
         // Second level
         Category::create([ 'parent_id' => Category::where('name','Drustvo')->first()->id
             , 'name' => 'Politika', 'level' => 'forum' ]);

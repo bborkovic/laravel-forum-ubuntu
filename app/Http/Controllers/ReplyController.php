@@ -29,7 +29,7 @@ class ReplyController extends Controller
          ]
       );
       $reply->save();
-      $reply->thread->increment_replies();
+      // $reply->thread->increment_replies();
       return redirect("/threads/$thread_id");
    }
 

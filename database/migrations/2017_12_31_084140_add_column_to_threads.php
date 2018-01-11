@@ -15,7 +15,7 @@ class AddColumnToThreads extends Migration
     {
 
        Schema::table('threads', function($table) {
-           $table->integer('replies');
+           $table->integer('replies')->default(0);
        });
 
     }
